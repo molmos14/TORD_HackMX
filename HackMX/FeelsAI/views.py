@@ -11,3 +11,7 @@ def current_datetime(request):
 def home(request):
     return HttpResponse("Hello World")
 
+def random(request):
+    movies = Movie.objects.filter(release_year=2014)
+    for movie in movies:
+        print(movie.title)
