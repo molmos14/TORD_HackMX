@@ -54,7 +54,9 @@ def grafica(request):
 
     df=pd.read_csv("/Users/elang/OneDrive/Escritorio/HackMX/TORD_HACKMX/poyecto/Final/StressLevelDataset.csv")
     df1=df.drop(columns=['self_esteem','sleep_quality','living_conditions','safety','basic_needs','academic_performance','teacher_student_relationship','social_support','blood_pressure','breathing_problem'])
-    fig =px.imshow(df1.corr())
+    fig = px.sunburst(df1, path=['depression', 'mental_health_history'],
+        values='anxiety_level')
+
     grafica = fig.to_html(full_html=False)
 
     # # Pasa la gráfica a la plantilla
