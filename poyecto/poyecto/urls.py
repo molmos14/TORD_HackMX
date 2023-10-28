@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from FeelsAI.views import personas
+from FeelsAI.views import see_prediction
 from FeelsAI.views import grafica
 from FeelsAI.views import dashboard
 from FeelsAI.dashapps.example import app
@@ -24,12 +24,9 @@ from FeelsAI.views import home
 
 urlpatterns = [
     path('', home, name='home'),
-    path('sql/', personas, name='sql'),
+    path('sql/', see_prediction, name='sql'),
     path('grafica/', grafica, name='grafica'),
     path('dashboard/', dashboard, name='dashboard'),
-    path('personas/', personas, name='lista_personas'),
-    #path('grafica/', grafica, name='grafica_chida'),
-    #path('dashboard/', dashboard, name='interactive_dash'),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
     # Otras rutas de tu aplicación
 ]
