@@ -54,19 +54,7 @@ def grafica(request):
 
     df=pd.read_csv("/Users/elang/OneDrive/Escritorio/HackMX/TORD_HACKMX/poyecto/Final/StressLevelDataset.csv")
     df1=df.drop(columns=['self_esteem','sleep_quality','living_conditions','safety','basic_needs','academic_performance','teacher_student_relationship','social_support','blood_pressure','breathing_problem'])
-    fig = px.sunburst(df1, path=['depression', 'mental_health_history'],
-        values='anxiety_level')
-    #fig.show()
-
-    # # Crea una lista de valores para el eje y
-    # y = list(range(1000))
-
-    # # Crea una gráfica usando Plotly
-    # fig = go.Figure(
-    #     data=[go.Bar(y=y)]
-    # )
-
-    # # Convierte la gráfica en HTML
+    fig =px.imshow(df1.corr())
     grafica = fig.to_html(full_html=False)
 
     # # Pasa la gráfica a la plantilla
