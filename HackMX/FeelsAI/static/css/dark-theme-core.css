@@ -131,3 +131,23 @@ body.dark-page .btn-outline-dark {
   border-color: white;
 }
 /*# sourceMappingURL=dark-theme-core.css.map */
+
+body.dark-page .form {
+  /* width: 400px; */
+  padding: 10px;
+  font-size: 18px;
+  outline:none;
+  background: linear-gradient(to left top, #000, #22132e) fixed;
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.8);
+  transition: all 0.5s;
+}
+
+body.dark-page .form:hover {
+  border: 2px solid rgba(255,255,255,0.5);
+}
+body.dark-page .form:focus {
+  border: 2px solid rgba(255,255,255,0.5);
+  background: linear-gradient(to left top, #000, #4e2d69) fixed;
+}
