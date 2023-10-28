@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import pymysql
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'FeelsAI'
 ]
 
 MIDDLEWARE = [
@@ -76,9 +79,9 @@ WSGI_APPLICATION = 'poyecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'netflix',
-        'USER': 'tord',
-        'PASSWORD': 'PaMax/150814',
+        'NAME': 'prueba',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',  # O la dirección IP si tu base de datos está en un servidor remoto
         'PORT': '3306',  # El puerto puede variar dependiendo de tu configuración
     }

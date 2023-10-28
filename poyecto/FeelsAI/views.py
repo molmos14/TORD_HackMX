@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from .models import Persona
 
-# Create your views here.
+def personas(request):
+    todas = Persona.objects.all()
+    data = ''
+    for persona in todas:
+        data += f'Nombre: {persona.Nombre}'
+        data += "<br>"
+    return HttpResponse(data)
