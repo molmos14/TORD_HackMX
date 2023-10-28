@@ -9,23 +9,11 @@ import plotly.graph_objects as go
 from FeelsAI.dashapps.example import app
 import numpy as np
 from .models import prediccion
+import plotly.express as px
+import pandas as pd
 
 def home(request):
     return render(request, 'home.html')
-
-# def personas(request):
-#     todas = prediccion.objects.all()
-#     data = ''
-#     for persona in todas:
-#         data += f'Nombre: {prediccion.Nombre}'
-#         data += "<br>"
-#     return HttpResponse(data)
-
-import numpy as np
-
-import numpy as np
-
-import numpy as np
 
 def see_prediction(request):
     todas = prediccion.objects.all()
@@ -62,22 +50,24 @@ def see_prediction(request):
 
     return HttpResponse(data_str)
 
-
-
 def grafica(request):
-    # Crea una lista de valores para el eje y
-    y = list(range(1000))
 
-    # Crea una gráfica usando Plotly
-    fig = go.Figure(
-        data=[go.Bar(y=y)]
-    )
+    df=pd.read_csv("/Users/elang/OneDrive/Escritorio/HackMX/TORD_HACKMX/poyecto/Final/StressLevelDataset.csv")
+    df1=df.drop(columns=['self_esteem','sleep_quality','living_conditions','safety','basic_needs','academic_performance','teacher_student_relationship','social_support','blood_pressure','breathing_problem'])
+    fig = px.sunburst(df1, path=['depression', 'mental_health_history'],
+        values='anxiety_level')
+    #fig.show()
 
-    # Convierte la gráfica en HTML
+    # # Crea una lista de valores para el eje y
+    # y = list(range(1000))
+
+    # # Crea una gráfica usando Plotly
+    # fig = go.Figure(
+    #     data=[go.Bar(y=y)]
+    # )
+
+    # # Convierte la gráfica en HTML
     grafica = fig.to_html(full_html=False)
 
-    # Pasa la gráfica a la plantilla
+    # # Pasa la gráfica a la plantilla
     return render(request, 'graphic.html', {'grafica': grafica})
-
-def dashboard(request):
-    return render(request, 'dashboard.html')

@@ -16,7 +16,6 @@ Including another URLconf
 from django.urls import path
 from FeelsAI.views import see_prediction
 from FeelsAI.views import grafica
-from FeelsAI.views import dashboard
 from FeelsAI.dashapps.example import app
 from django.urls import include
 from FeelsAI.views import home 
@@ -26,7 +25,5 @@ urlpatterns = [
     path('', home, name='home'),
     path('sql/', see_prediction, name='sql'),
     path('grafica/', grafica, name='grafica'),
-    path('dashboard/', dashboard, name='dashboard'),
-    path('django_plotly_dash/', include('django_plotly_dash.urls')),
     # Otras rutas de tu aplicación
 ]
