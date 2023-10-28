@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'poyecto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'netflix',
+        'USER': 'tord',
+        'PASSWORD': 'PaMax/150814',
+        'HOST': 'localhost',  # O la dirección IP si tu base de datos está en un servidor remoto
+        'PORT': '3306',  # El puerto puede variar dependiendo de tu configuración
     }
 }
 
