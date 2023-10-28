@@ -19,12 +19,17 @@ from FeelsAI.views import grafica
 from FeelsAI.views import dashboard
 from FeelsAI.dashapps.example import app
 from django.urls import include
+from FeelsAI.views import home 
 
 
 urlpatterns = [
-    path('', personas, name='lista_personas'),
-    path('grafica/', grafica, name='grafica_chida'),
-    path('dashboard/', dashboard, name='interactive_dash'),
+    path('', home, name='home'),
+    path('sql/', personas, name='sql'),
+    path('grafica/', grafica, name='grafica'),
+    path('dashboard/', dashboard, name='dashboard'),
+    path('personas/', personas, name='lista_personas'),
+    #path('grafica/', grafica, name='grafica_chida'),
+    #path('dashboard/', dashboard, name='interactive_dash'),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
     # Otras rutas de tu aplicación
 ]

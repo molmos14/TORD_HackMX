@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feel AI</title>
+</head>
+<body>
+    <div class="menu">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="menu-items">
+            <li><a href="{% url 'sql' %}">SQL</a></li>
+            <li><a href="{% url 'grafica' %}">Gráfica</a></li>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <p>Hola como tas :D </p>
+    </div>
+</body>
+</html>

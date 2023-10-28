@@ -8,6 +8,9 @@ import base64
 import plotly.graph_objects as go
 from FeelsAI.dashapps.example import app
 
+def home(request):
+    return render(request, 'home.html')
+
 def personas(request):
     todas = Persona.objects.all()
     data = ''
