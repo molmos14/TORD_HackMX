@@ -86,7 +86,7 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'netlfix',
+        'NAME': 'netflix',
         'USER': 'tord',
         'PASSWORD': 'PaMax/150814',
         'HOST': 'localhost',  # O la dirección IP si tu base de datos está en un servidor remoto
